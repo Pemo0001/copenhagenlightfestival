@@ -6,8 +6,7 @@ import Layout from "../Layouts/Layout.astro";
 const data = await fetch("https://oijhleaohshaevohinaq.supabase.co/rest/v1/Lysvaerker", {
   method: "GET",
   headers: {
-    apikey:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9pamhsZWFvaHNoYWV2b2hpbmFxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTIwMTksImV4cCI6MjAyNjA2ODAxOX0.d6tcpNExeARcaKg_nbpvCISpqGMBEncx-nCb0wIytlE",
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9pamhsZWFvaHNoYWV2b2hpbmFxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTIwMTksImV4cCI6MjAyNjA2ODAxOX0.d6tcpNExeARcaKg_nbpvCISpqGMBEncx-nCb0wIytlE",
   },
 }).then((res) => res.json());
 ---
