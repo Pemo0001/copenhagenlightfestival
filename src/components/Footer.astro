@@ -1,0 +1,108 @@
+---
+
+---
+
+<footer>
+  <div class="grid_1-1-1">
+    <div class="kontakt">
+      <h3>Kontakt</h3>
+      <p>info@copenhagenlightfestival.org</p>
+      <p>Toldbodgade 39, 1253 København K</p>
+      <p>+45 25 55 66 04</p>
+    </div>
+
+    <div class="newsletter_grid">
+      <div class="newsletter">
+        <h3>Nyhedsbrev</h3>
+        <p>Tilmeld dig for at blive opdateret om Copenhagen Light Festival</p>
+      </div>
+
+      <input type="email" name="myInput" placeholder="Navn" size="20" required />
+      <br />
+      <input type="email" name="myInput" placeholder="Email" size="20" required />
+      <br />
+      <button>SIGN UP</button>
+    </div>
+
+    <div class="mid_logo">
+      <img src="mid_logo.webp" alt="" />
+    </div>
+  </div>
+  <img class="left_logo" src="left_logo.png" alt="" />
+</footer>
+
+<style>
+  html {
+    color: var(--text-color);
+  }
+  :root {
+    --primary-color: #1e1e1e;
+    --secondary-color: #8c61f5;
+    --action-color: #fd383c;
+    --text-color: #fff;
+  }
+  .name_mail {
+  }
+
+  footer {
+    background-color: var(--primary-color);
+    padding: 20px;
+  }
+
+  /* ___________ MOBILE ___________ */
+  @media screen and (max-width: 800px) {
+    img {
+      max-width: 130px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .mid_logo {
+      display: none;
+    }
+
+    .grid_1-1-1 {
+      max-width: 300px;
+    }
+
+    .newsletter_grid {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    input {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+
+  /* __________ DESKTOP __________ */
+  @media screen and (min-width: 800px) {
+    img {
+      max-width: 130px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .kontakt {
+      grid-column: 3 / span 1;
+    }
+
+    .mid_logo {
+      grid-row: 0 / span 1;
+    }
+    .newsletter_grid {
+      grid-column: 1 / span 1;
+      max-width: 240px;
+    }
+    .grid_1-1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .left_logo {
+      display: none;
+    }
+  }
+</style>
