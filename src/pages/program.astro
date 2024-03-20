@@ -1,11 +1,35 @@
 ---
-import"../global.css";
+import ArtCard from "../components/ArtCard.astro";
+import "../global.css";
 import Layout from "../Layouts/Layout.astro";
-import Button from "../components/Button.astro";
+
+const data = await fetch("https://oijhleaohshaevohinaq.supabase.co/rest/v1/Lysvaerker", {
+  method: "GET",
+  headers: {
+    apikey:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9pamhsZWFvaHNoYWV2b2hpbmFxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTIwMTksImV4cCI6MjAyNjA2ODAxOX0.d6tcpNExeARcaKg_nbpvCISpqGMBEncx-nCb0wIytlE",
+  },
+}).then((res) => res.json());
 ---
 
 <Layout title="Program">
-
-    <h1></h1>
-    
+  <section class="lysværker">
+    {
+      data.map((værker) => {
+        return <ArtCard data={værker} />;
+      })
+    }
+  </section>
 </Layout>
+
+<style>
+  body {
+    margin: 30px;
+    background-color: var(--primary-color);
+  }
+  .lysværker {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
+</style>
