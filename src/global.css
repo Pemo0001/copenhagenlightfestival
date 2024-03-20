@@ -2,7 +2,8 @@
 
 @font-face {
   font-family: "library_3_amregular";
-  src: url("library-3-am.3am-webfont.woff2") format("woff2"), url("library-3-am.3am-webfont.woff") format("woff");
+  src: url("library-3-am.3am-webfont.woff2") format("woff2"),
+    url("library-3-am.3am-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -38,4 +39,9 @@ p {
   --secondary-color: #8c61f5;
   --action-color: #fd383c;
   --text-color: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
