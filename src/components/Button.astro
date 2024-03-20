@@ -1,31 +1,31 @@
 ---
-const {variant} = Astro.props;
+const { variant } = Astro.props;
 ---
 
 <button class={variant}><slot /></button>
 
 <style>
-button {
+  button {
     border-radius: 3px;
     padding: 0.7rem 2.2rem;
     border: none;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 1.5rem;
-}
+    cursor: pointer;
+  }
 
-button:hover {
-    border: 2px solid #fff;
-    transition: ease-in 0.05s;
-}
+  button:hover {
+    box-shadow: inset 0 0 0 1.5px #fff;
+    transition: 0.2s ease-in-out;
+  }
 
-.primary {
-    background-color: #FD383C;
+  .primary {
+    background-color: #fd383c;
     color: #fff;
-}
+  }
 
-.secondary {
-    background-color: #8C61F5;
+  .secondary {
+    background-color: #8c61f5;
     color: #fff;
-}
-
+  }
 </style>
