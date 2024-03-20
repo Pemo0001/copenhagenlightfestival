@@ -1,0 +1,35 @@
+---
+import Button from "./Button.astro";
+const { header } = Astro.props;
+const { img } = Astro.props;
+const { description } = Astro.props;
+const { button } = Astro.props;
+const { link } = Astro.props;
+---
+
+<div class="frontcard">
+  <a href={link}>
+    <h2>{header}</h2>
+    <img class="img" src={img} alt="" />
+    <p>{description}</p>
+    <Button class="button" variant="primary">{button}</Button>
+  </a>
+</div>
+
+<style>
+  .frontcard {
+    max-width: 650px;
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 3rem 2rem;
+  }
+
+  .frontcard * {
+    padding: 1rem 0;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+</style>

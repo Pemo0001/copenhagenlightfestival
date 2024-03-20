@@ -1,0 +1,28 @@
+---
+import "../global.css";
+
+const { data } = Astro.props;
+---
+
+<a href={`${data.slug}`}>
+  <article>
+    <img src={data.list_image} alt="lysværk" />
+    <h2>{data.name}</h2>
+    <h3>{data.location}</h3>
+  </article>
+</a>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+
+  h2,
+  h3 {
+    color: white;
+    font-size: 2rem;
+  }
+
+  h2 {
+  }
+</style>
