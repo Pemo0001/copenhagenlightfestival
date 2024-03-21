@@ -46,6 +46,22 @@
 </header>
 
 <style>
+  @media screen and (max-width: 800px) {
+    .program_festivalkort {
+      list-style: none;
+      text-align: right;
+    }
+
+    .program_festivalkort a {
+      text-decoration: none;
+      color: #fff;
+      font-family: "Helvetica", sans-serif;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-right: 2rem;
+    }
+  }
+
   :root {
     --primary-color: #1e1e1e;
     --secondary-color: #8c61f5;
@@ -59,8 +75,8 @@
     background-color: var(--primary-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  .menu_default,
-  a:hover {
+
+  li a:hover {
     color: var(--action-color);
   }
 
@@ -110,19 +126,22 @@
     margin-right: 0;
   }
 
-  .program_festivalkort {
-    display: flex;
-    align-items: flex-end;
-    list-style: none;
-  }
+  /* Menu desktop */
+  @media screen and (min-width: 800px) {
+    .program_festivalkort {
+      display: flex;
+      align-items: flex-end;
+      list-style: none;
+    }
 
-  .program_festivalkort a {
-    text-decoration: none;
-    color: #fff;
-    font-family: "Helvetica", sans-serif;
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-right: 2rem;
+    .program_festivalkort a {
+      text-decoration: none;
+      color: #fff;
+      font-family: "Helvetica", sans-serif;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-right: 2rem;
+    }
   }
   .menu a {
     display: block;
