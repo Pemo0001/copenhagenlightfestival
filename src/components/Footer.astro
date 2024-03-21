@@ -9,6 +9,11 @@ import Button from "./Button.astro";
       <p>info@copenhagenlightfestival.org</p>
       <p>Toldbodgade 39, 1253 København K</p>
       <p>+45 25 55 66 04</p>
+      <div class="socials">
+        <img src="images/facebook.svg" />
+        <img src="images/instagram.svg" />
+        <img src="images/youtube.svg" />
+      </div>
     </div>
 
     <div class="newsletter_grid">
@@ -100,6 +105,11 @@ import Button from "./Button.astro";
 
     .left_logo {
       display: none;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: flex-start;
     }
   }
 </style>
