@@ -5,12 +5,40 @@ import Layout from "../Layouts/Layout.astro";
 import Burgermenu from "../components/Burgermenu.astro";
 import Qr from "../components/Qr.astro";
 import Footer from "../components/Footer.astro";
+import Countdown from "../components/Countdown.astro";
 ---
 
 <Layout title="Copehagen Light Festival">
   <Burgermenu />
-  <Qr />
+  <div class="hero_video">
+    <video autoplay muted loop src="https://deerbuster.dk/kea/drone_video.mp4"></video>
+  </div>
+
+  <div class="qr_countdown">
+    <Countdown />
+
+    <Qr class="qr" />
+  </div>
   <Footer />
 </Layout>
 
-<style></style>
+<style>
+  .hero_video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -90;
+  }
+
+  .qr_countdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .qr {
+    position: relative;
+    top: 100px;
+    left: 100px;
+  }
+</style>
