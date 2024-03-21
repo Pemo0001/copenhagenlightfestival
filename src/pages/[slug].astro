@@ -1,13 +1,13 @@
 ---
 // @ts-nocheck
 import Layout from "../Layouts/Layout.astro";
+import "../global.css";
 
 export async function getStaticPaths() {
   const data = await fetch("https://oijhleaohshaevohinaq.supabase.co/rest/v1/Lysvaerker", {
     method: "GET",
     headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9pamhsZWFvaHNoYWV2b2hpbmFxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTIwMTksImV4cCI6MjAyNjA2ODAxOX0.d6tcpNExeARcaKg_nbpvCISpqGMBEncx-nCb0wIytlE",
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9pamhsZWFvaHNoYWV2b2hpbmFxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTIwMTksImV4cCI6MjAyNjA2ODAxOX0.d6tcpNExeARcaKg_nbpvCISpqGMBEncx-nCb0wIytlE",
     },
   }).then((response) => response.json());
 
@@ -24,10 +24,71 @@ const { myData } = Astro.props;
 ---
 
 <Layout title={myData.name}>
-  <img src={myData.hero_image} alt="lysværk heroimage" />
-  <img src={myData.list_image} alt="lysværk" />
-  <h1>{myData.name}</h1>
-  <h2>{myData.name}</h2>
-  <h3>{myData.address}</h3>
-  <p>{myData.description}</p>
+  <div class="container">
+    <h1>{myData.name}</h1>
+    <img src={myData.hero_image} alt="lysværk hero" />
+  </div>
+  <section class="lysværk_info">
+    <h2>{myData.name}</h2>
+    <h3>{myData.address}</h3>
+    <div class="grid_1_1">
+      <p>{myData.description}</p>
+      <img src={myData.list_image} alt="lysværk" />
+    </div>
+  </section>
+  <section class="map">
+    <h2 class="findvej">Find vej</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.752899513758!2d12.585180076842258!3d55.67589697305582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652533deb046d0d%3A0xce0a18b6fdb4018d!2sHavnegade%2014%2C%201058%20K%C3%B8benhavn!5e0!3m2!1sen!2sdk!4v1711012149212!5m2!1sen!2sdk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
 </Layout>
+
+<style>
+  body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+  }
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+  }
+  .container h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    margin: 0;
+  }
+
+  .lysværk_info,
+  .map {
+    max-width: 92%;
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
+
+  .grid_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin: 3rem 0;
+  }
+
+  .findvej {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  iframe {
+    width: 100%;
+  }
+</style>
