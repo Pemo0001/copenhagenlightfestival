@@ -15,9 +15,12 @@ import Countdown from "../components/Countdown.astro";
   </div>
 
   <div class="qr_countdown">
-    <Countdown />
-
-    <Qr class="qr" />
+    <div class="grid_item_1">
+      <Countdown />
+    </div>
+    <div class="grid_item_2">
+      <Qr class="qr" />
+    </div>
   </div>
   <Footer />
 </Layout>
@@ -36,9 +39,10 @@ import Countdown from "../components/Countdown.astro";
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  .qr {
-    position: relative;
-    top: 100px;
-    left: 100px;
+
+  .grid_item_2 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 </style>
