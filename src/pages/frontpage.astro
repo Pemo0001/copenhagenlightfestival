@@ -16,7 +16,7 @@ import Countdown from "../components/Countdown.astro";
 
   <div class="qr_countdown">
     <div class="grid_item_1">
-      <Countdown />
+      <Countdown class="countdown" />
     </div>
     <div class="grid_item_2">
       <Qr class="qr" />
@@ -38,11 +38,16 @@ import Countdown from "../components/Countdown.astro";
   .qr_countdown {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 1rem;
   }
 
   .grid_item_2 {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+  }
+
+  .grid_item_1 {
+    margin: 1rem 0 0 1rem;
   }
 </style>
