@@ -1,147 +1,165 @@
 ---
 
 ---
+
 <header>
-<nav>
-         <div class="logo">
-            <a href="/">
-                <img src="left_logo.png" alt="Logo">
-            </a>
-         </div>
+  <nav>
+    <div class="logo">
+      <a href="/">
+        <img src="left_logo.png" alt="Logo" />
+      </a>
+    </div>
 
-        <ul class="program_festivalkort">
-            <li><a href="/program">Program</a></li>
-            <li><a href="/underkonstruktion">Festivalkort</a></li>
-        </ul>
+    <div class="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
 
+    <ul class="program_festivalkort">
+      <li><a href="/program">Program</a></li>
+      <li><a href="/underkonstruktion">Festivalkort</a></li>
+    </ul>
 
-             <ul class="menu">
-                <li><a href="#">Oplev CLF</a></li>
-                   <hr>
-                <p class="menu_under_sider">Til fods</p>
-                <p class="menu_under_sider">I bus</p>
-                <p class="menu_under_sider">På vandet</p>
+    <ul class="menu">
+      <li><a href="#">Oplev CLF</a></li>
+      <hr />
+      <p class="menu_under_sider">Til fods</p>
+      <p class="menu_under_sider">I bus</p>
+      <p class="menu_under_sider">På vandet</p>
 
-                <li><a href="#">Vær med</a></li>
-                   <hr>
-                <p class="menu_under_sider">For kunstnere</p>
-                <p class="menu_under_sider">Bliv vært</p>
-                <p class="menu_under_sider">Bliv sponsore</p>
-                <p class="menu_under_sider">Foto konkurrence</p>
+      <li><a href="#">Vær med</a></li>
+      <hr />
+      <p class="menu_under_sider">For kunstnere</p>
+      <p class="menu_under_sider">Bliv vært</p>
+      <p class="menu_under_sider">Bliv sponsore</p>
+      <p class="menu_under_sider">Foto konkurrence</p>
 
-                <li><a href="#">Om</a></li>
-                   <hr>
-                <p class="menu_under_sider">Om CLF</p>
-                <p class="menu_under_sider">Partnere & sponsore</p>
-                <p class="menu_under_sider">FAQ</p>
-                <p class="menu_under_sider">Kontakt</p>
-            </ul>
-
-            <div class="burger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-</nav>
+      <li><a href="#">Om</a></li>
+      <hr />
+      <p class="menu_under_sider">Om CLF</p>
+      <p class="menu_under_sider">Partnere & sponsore</p>
+      <p class="menu_under_sider">FAQ</p>
+      <p class="menu_under_sider">Kontakt</p>
+    </ul>
+  </nav>
 </header>
 
 <style>
+  :root {
+    --primary-color: #1e1e1e;
+    --secondary-color: #8c61f5;
+    --action-color: #fd383c;
+    --text-color: #fff;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .menu_default,
+  a:hover {
+    color: var(--action-color);
+  }
 
-    :root {
-  --primary-color: #1e1e1e;
-  --secondary-color: #8c61f5;
-  --action-color: #fd383c;
-  --text-color: #fff;
-}
-header {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  background-color: var(--primary-color);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.menu_default, a:hover {
-color: var(--action-color);
-}
+  .logo img {
+    width: 120px;
+  }
 
-.logo img {
-  width: 120px;
-}
+  nav {
+    display: flex;
+    align-items: center;
+  }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  .menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    font-family: "Bebas Neue", sans-serif;
+  }
 
-.menu {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: none;
-font-family: "Bebas Neue", sans-serif;
-}
-
-.menu_under_sider {
+  .menu_under_sider {
     text-align: right;
-color: var(--text-color);
-padding-right: 30px;
-padding-bottom: 10px;
-}
+    color: var(--text-color);
+    padding-right: 30px;
+    padding-bottom: 10px;
+  }
 
-.menu_under_sider:hover {
-color: var(--action-color);
-cursor: pointer;
-text-shadow: 2px 2px 20px var(--action-color);
-}
+  .menu_under_sider:hover {
+    color: var(--action-color);
+    cursor: pointer;
+    text-shadow: 2px 2px 20px var(--action-color);
+  }
 
-hr {
-   width: 140px;
-  position: relative;
-  top: -13px;
-  left: 136px;
-  color: var(--text-color);
-}
-.menu li {
-  margin-right: 20px;
-}
+  hr {
+    width: 140px;
+    position: relative;
+    top: -13px;
+    left: 136px;
+    color: var(--text-color);
+  }
+  .menu li {
+    margin-right: 20px;
+  }
 
-.menu li:last-child {
-  margin-right: 0;
-}
+  .menu li:last-child {
+    margin-right: 0;
+  }
 
-.menu a {
-  display: block;
-  padding: 10px;
-  color: var(--text-color);
-  text-decoration: none;
-  transition: color 0.3s;
-  text-align: end;
-}
-.burger {
-  width: 30px;
-  height: 20px;
-  cursor: pointer;
-}
+  .program_festivalkort {
+    display: flex;
+    align-items: flex-end;
+    list-style: none;
+  }
 
-.burger .line {
-  width: 100%;
-  height: 2px;
-  background-color:var(--text-color);
-  margin-bottom: 5px;
-  transition: 0.2s linear;
-}
+  .program_festivalkort a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Helvetica", sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-right: 2rem;
+  }
+  .menu a {
+    display: block;
+    padding: 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+    text-align: end;
+  }
+  .burger {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .program_festivalkort {
+    position: absolute;
+    top: 45px;
+    right: 100px;
+  }
+  .burger .line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color);
+    margin-bottom: 5px;
+    transition: 0.2s linear;
+  }
 
   .burger {
-  width: 30px;
-  height: 20px;
-  cursor: pointer;
-  position: absolute;
-  top: 45px;
-  right: 30px; 
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 45px;
+    right: 30px;
   }
-  
+
   .burger.active .line:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
     transition: 0.2s linear;
@@ -177,29 +195,29 @@ hr {
     text-align: right;
   }
 
-@media screen and (max-width: 800px) {
-}
+  @media screen and (max-width: 800px) {
+  }
 </style>
 
 <script>
-const burger = document.querySelector(".burger");
-const nav = document.querySelector("nav");
-const menu = document.querySelector(".menu");
-const links = document.querySelectorAll(".menu li a");
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector("nav");
+  const menu = document.querySelector(".menu");
+  const links = document.querySelectorAll(".menu li a");
 
-// Aktiverer animationen
+  // Aktiverer animationen
 
-burger.addEventListener("click", () => {
-  burger.classList.toggle("active");
-  nav.classList.toggle("active");
-});
-
-// Aktiverer aniamtion - bare omvendt
-
-links.forEach((link) => {
-  link.addEventListener("click", () => {
-    burger.classList.remove("active");
-    nav.classList.remove("active");
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    nav.classList.toggle("active");
   });
-});
+
+  // Aktiverer aniamtion - bare omvendt
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      burger.classList.remove("active");
+      nav.classList.remove("active");
+    });
+  });
 </script>
