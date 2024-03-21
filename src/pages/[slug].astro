@@ -2,6 +2,8 @@
 // @ts-nocheck
 import Layout from "../Layouts/Layout.astro";
 import "../global.css";
+import Burgermenu from "../components/Burgermenu.astro";
+import Footer from "../components/Footer.astro";
 
 export async function getStaticPaths() {
   const data = await fetch("https://oijhleaohshaevohinaq.supabase.co/rest/v1/Lysvaerker", {
@@ -24,6 +26,7 @@ const { myData } = Astro.props;
 ---
 
 <Layout title={myData.name}>
+  <Burgermenu />
   <div class="container">
     <h1>{myData.name}</h1>
     <img src={myData.hero_image} alt="lysværk hero" />
@@ -40,6 +43,7 @@ const { myData } = Astro.props;
     <h2 class="findvej">Find vej</h2>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.752899513758!2d12.585180076842258!3d55.67589697305582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652533deb046d0d%3A0xce0a18b6fdb4018d!2sHavnegade%2014%2C%201058%20K%C3%B8benhavn!5e0!3m2!1sen!2sdk!4v1711012149212!5m2!1sen!2sdk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </section>
+  <Footer />
 </Layout>
 
 <style>
