@@ -18,10 +18,13 @@ const { link } = Astro.props;
 
 <style>
   .frontcard {
-    max-width: 650px;
+    max-width: 600px;
     background-color: #1e1e1e;
     color: #fff;
-    padding: 3rem 2rem;
+    padding: 2rem 2rem;
+    margin-bottom: 3rem;
+    height: fit-content;
+    border-radius: 10px;
   }
 
   .frontcard * {
@@ -31,5 +34,9 @@ const { link } = Astro.props;
   a {
     color: #fff;
     text-decoration: none;
+  }
+
+  .img {
+    border-radius: 20px;
   }
 </style>
