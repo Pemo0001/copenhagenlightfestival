@@ -1,5 +1,5 @@
 ---
-
+import Button from "./Button.astro";
 ---
 
 <footer>
@@ -21,7 +21,7 @@
       <br />
       <input type="email" name="myInput" placeholder="Email" size="20" required />
       <br />
-      <button>SIGN UP</button>
+      <Button variant="secondary">SIGN UP</Button>
     </div>
 
     <div class="mid_logo">
@@ -81,24 +81,21 @@
     img {
       max-width: 130px;
       margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .kontakt {
-      grid-column: 3 / span 1;
-    }
-
-    .mid_logo {
-      grid-row: 0 / span 1;
-    }
-    .newsletter_grid {
-      grid-column: 1 / span 1;
-      max-width: 240px;
     }
     .grid_1-1-1 {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .kontakt {
+      order: 3;
+    }
+    .newsletter_grid {
+      order: -1;
+    }
+
+    .mid_logo {
+      margin: auto 0;
     }
 
     .left_logo {
