@@ -91,4 +91,15 @@ const { myData } = Astro.props;
   iframe {
     width: 100%;
   }
+
+  @media screen and (max-width: 800px) {
+    .grid_1_1 {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .grid_1_1 p {
+      order: 2;
+    }
+  }
 </style>
