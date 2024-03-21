@@ -2,6 +2,8 @@
 import ArtCard from "../components/ArtCard.astro";
 import "../global.css";
 import Layout from "../Layouts/Layout.astro";
+import Burgermenu from "../components/Burgermenu.astro";
+import Footer from "../components/Footer.astro";
 
 const data = await fetch("https://oijhleaohshaevohinaq.supabase.co/rest/v1/Lysvaerker", {
   method: "GET",
@@ -12,6 +14,7 @@ const data = await fetch("https://oijhleaohshaevohinaq.supabase.co/rest/v1/Lysva
 ---
 
 <Layout title="Program">
+  <Burgermenu />
   <section class="lysværker">
     {
       data.map((værker) => {
@@ -19,6 +22,7 @@ const data = await fetch("https://oijhleaohshaevohinaq.supabase.co/rest/v1/Lysva
       })
     }
   </section>
+  <Footer />
 </Layout>
 
 <style>
