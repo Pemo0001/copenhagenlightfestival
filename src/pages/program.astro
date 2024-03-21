@@ -2,6 +2,7 @@
 import ArtCard from "../components/ArtCard.astro";
 import "../global.css";
 import Layout from "../Layouts/Layout.astro";
+import Button from "../components/Pill.astro";
 
 const data = await fetch("https://oijhleaohshaevohinaq.supabase.co/rest/v1/Lysvaerker", {
   method: "GET",
@@ -13,16 +14,98 @@ const data = await fetch("https://oijhleaohshaevohinaq.supabase.co/rest/v1/Lysva
 ---
 
 <Layout title="Program">
-  <section class="lysværker">
-    {
-      data.map((værker) => {
-        return <ArtCard data={værker} />;
-      })
-    }
+  <h1>Program</h1>
+  <div class="jonas">
+    <Button data-filter="x">Events</Button>
+    <Button data-filter="x">Værker</Button>
+    <button class="knap" data-filter="Lysværk">LYSVÆRKER</button>
+    <button class="knap" data-filter="Event">EVENTS ONLY</button>
+  </div>
+  <!-- <div class="knap" id="knap_event">
+    <Button>Events</Button>
+  </div>
+  <div class="knap" id="knap_vaerk">
+    <Button>Værker</Button>
+  </div> -->
+
+  <!-- <div class="knap" id="knap_vaerk_og_event">
+    <Button>Alle</Button>
+  </div> -->
+  <section>
+    <!-- <div class="event hide">
+      <h2>Events</h2>
+      <div class="lysværker">
+        {
+          data.map((værker) => {
+            if (værker.type == "Event") {
+              return <ArtCard data={værker} />;
+            }
+          })
+        }
+      </div>
+    </div>
+    <div class="vaerk hide">
+      <h2>Lysværker</h2>
+      <div class="lysværker">
+        {
+          data.map((værker) => {
+            if (værker.type == "Lysværk") {
+              return <ArtCard data={værker} />;
+            }
+          })
+        }
+      </div>
+    </div> -->
+    <div class="event_og_vaerk">
+      <div class="lysværker">
+        {
+          data.map((værker) => {
+            return <ArtCard data={værker} />;
+          })
+        }
+      </div>
+    </div>
   </section>
+
+  <script>
+    document.querySelectorAll(".jonas Button").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        console.log("Du valgte ", e.target.dataset.filter);
+        document.querySelectorAll(".cardWrapper").forEach((card) => {
+          console.log(card.dataset.type);
+          if (card.dataset.type === e.target.dataset.filter) {
+            console.log("De er ens");
+            card.classList.remove("hide");
+          } else {
+            console.log(card.dataset.type, "og", e.target.dataset.filter, " er ikke ens");
+            card.classList.add("hide");
+          }
+        });
+      });
+    });
+
+    /*  document.querySelector("#knap_event").addEventListener("mousedown", (event) => {
+      document.querySelector(".event").classList.toggle("hide");
+      document.querySelector(".vaerk").classList.add("hide");
+      document.querySelector(".event_og_vaerk").classList.toggle("hide");
+    });
+    document.querySelector("#knap_vaerk").addEventListener("mousedown", (event) => {
+      document.querySelector(".event").classList.add("hide");
+      document.querySelector(".vaerk").classList.toggle("hide");
+      document.querySelector(".event_og_vaerk").classList.toggle("hide");
+    });
+    document.querySelector("#knap_vaerk_og_event").addEventListener("mousedown", (event) => {
+      document.querySelector(".event").classList.add("hide");
+      document.querySelector(".vaerk").classList.add("hide");
+      document.querySelector(".event_og_vaerk").classList.toggle("hide");
+    }); */
+  </script>
 </Layout>
 
 <style>
+  h2 {
+    color: white;
+  }
   body {
     margin: 30px;
     background-color: var(--primary-color);
@@ -31,5 +114,28 @@ const data = await fetch("https://oijhleaohshaevohinaq.supabase.co/rest/v1/Lysva
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .knap {
+    border-radius: 3px;
+    padding: 0.7rem 2.2rem;
+    border: none;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    background-color: #a9a9a9;
+    border: 4px solid #a9a9a9;
+    cursor: pointer;
+  }
+  .knap:not(.knap--selected):hover {
+    border: 4px solid var(--secondary-color);
+    transition: ease-in 0.05s;
+  }
+  .jonas {
+    margin-bottom: 40px;
   }
 </style>

@@ -4,7 +4,7 @@ import "../global.css";
 const { data } = Astro.props;
 ---
 
-<a href={`${data.slug}`}>
+<a href={`${data.slug}`} data-type={data.type} class="cardWrapper">
   <article>
     <img src={data.list_image} alt="lysværk" />
     <h2>{data.name}</h2>

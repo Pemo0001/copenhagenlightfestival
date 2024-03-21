@@ -1,0 +1,36 @@
+---
+import "../global.css";
+---
+
+<button type="button" class="pill"><slot /></button>
+
+<script>
+  document.querySelectorAll(".pill").forEach((pill) => {
+    pill.addEventListener("click", () => pill.classList.toggle("pill--selected"));
+  });
+</script>
+
+<style>
+  .pill {
+    border-radius: 3px;
+    padding: 0.7rem 2.2rem;
+    border: none;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    background-color: #a9a9a9;
+    border: 4px solid #a9a9a9;
+    cursor: pointer;
+  }
+
+  .pill:not(.pill--selected):hover {
+    border: 4px solid var(--secondary-color);
+    transition: ease-in 0.05s;
+  }
+
+  .pill--selected {
+    background: var(--secondary-color);
+    border: 4px solid var(--secondary-color);
+    color: #ffffff;
+  }
+</style>
