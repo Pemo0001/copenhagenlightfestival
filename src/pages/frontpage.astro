@@ -8,6 +8,7 @@ import Footer from "../components/Footer.astro";
 import Countdown from "../components/Countdown.astro";
 import FrontCard from "../components/FrontCard.astro";
 import Date from "../components/Date.astro";
+import Button from "../components/Button.astro";
 ---
 
 <Layout title="Copehagen Light Festival">
@@ -21,23 +22,105 @@ import Date from "../components/Date.astro";
       <Countdown class="countdown" />
     </div>
     <div class="grid_item_2">
-      <Qr class="qr" />
+      <Qr />
     </div>
   </div>
   <section class="front">
     <div class="frontcards">
-      <Date class="date" />
+      <div class="date">
+        <Date />
+      </div>
       <FrontCard class="frontcard1" header="Program" description="Have a look at all the beautiful light works presented to the festival guests in February 2024." button="PROGRAM" link="/program" img="images/card1.jpg" />
       <FrontCard class="frontcard2" header="CLF CONSIDERS ENERGY" description="During one day the festival’s electricity usage correspond with 3 fully charged electric cars." button="READ MORE" link="/program" img="images/card2.jpg" />
-      <FrontCard class="frontcard3" header="PHOTO COMPETITION" description="Once again, we invite the guests of the light festival to share pictures  of your favorite light installations and atmospheric images from your  visits around the city – with us and with a jury that will nominate 25  pictures,  all together presented in a photo exhibition about Copenhagen  Light Festival 2024." button="READ MORE & SIGN UP" link="/program" img="images/card3.jpg" />
-      <FrontCard class="frontcard4" header="GUIDED TOURS" description="As something new in 2024, Copenhagen Light Festival organised guided  walks – to transform the chilly February evenings into an enchanting  experience through the heart of Copenhagen with inspiring stories behind  each light work, narrated by knowledgeable guides from the light  festival." button="READ MORE & BOOK" link="/program" img="images/card4.jpg" />
+      <FrontCard
+        class="frontcard3"
+        header="PHOTO COMPETITION"
+        description="Once again, we invite the guests of the light festival to share pictures  of your favorite light installations and atmospheric images from your  visits around the city – with us and with a jury that will nominate 25  pictures,  all together presented in a photo exhibition about Copenhagen  Light Festival 2024."
+        button="READ MORE & SIGN UP"
+        link="/program"
+        img="images/card3.jpg"
+      />
+      <FrontCard
+        class="frontcard4"
+        header="GUIDED TOURS"
+        description="As something new in 2024, Copenhagen Light Festival organised guided  walks – to transform the chilly February evenings into an enchanting  experience through the heart of Copenhagen with inspiring stories behind  each light work, narrated by knowledgeable guides from the light  festival."
+        button="READ MORE & BOOK"
+        link="/program"
+        img="images/card4.jpg"
+      />
     </div>
   </section>
   <Footer />
 </Layout>
 
 <style>
-  .front {
+  @media screen and (max-width: 800px) {
+    .date {
+      scale: 73%;
+      position: relative;
+      top: 10px;
+      left: -25px;
+    }
+
+    .front {
+      max-width: 100%;
+      padding: 5rem 50px;
+      background-color: var(--background-color);
+    }
+    .grid_item_1 {
+      display: none;
+    }
+    .hero_video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -90;
+    }
+    .grid_item_2 {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    .front {
+      max-width: 100%;
+      padding: 5rem 50px;
+      background-color: var(--background-color);
+    }
+    .frontcards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hero_video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -90;
+    }
+
+    .qr_countdown {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 1rem;
+    }
+
+    .grid_item_2 {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .grid_item_1 {
+      margin: 1rem 0 0 1rem;
+    }
+  }
+
+  /* .front {
     max-width: 100%;
     padding: 5rem 50px;
     background-color: var(--background-color);
@@ -70,5 +153,5 @@ import Date from "../components/Date.astro";
 
   .grid_item_1 {
     margin: 1rem 0 0 1rem;
-  }
+  } */
 </style>

@@ -33,20 +33,12 @@ import Button from "./Button.astro";
       <img src="mid_logo.webp" alt="" />
     </div>
   </div>
-  <img class="left_logo" src="left_logo.png" alt="" />
+  <img class="left_logo" src="mid_logo.webp" alt="" />
 </footer>
 
 <style>
   html {
     color: var(--text-color);
-  }
-  :root {
-    --primary-color: #1e1e1e;
-    --secondary-color: #8c61f5;
-    --action-color: #fd383c;
-    --text-color: #fff;
-  }
-  .name_mail {
   }
 
   footer {
@@ -71,13 +63,15 @@ import Button from "./Button.astro";
       max-width: 300px;
     }
 
-    .newsletter_grid {
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
     input {
       margin-top: 5px;
       margin-bottom: 5px;
+    }
+    .socials {
+      display: flex;
+      justify-content: flex-start;
+      gap: 15px;
+      margin-top: 5px;
     }
   }
 
